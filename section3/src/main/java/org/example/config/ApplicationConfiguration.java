@@ -5,6 +5,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
+import java.util.Scanner;
+
 
 @Configuration
 public class ApplicationConfiguration
@@ -55,6 +57,12 @@ public class ApplicationConfiguration
     {
         String sData1 = new String("I Hate SpringBoot");
         return sData1;
+    }
+
+    @Bean
+    Scanner scanner()
+    {
+        return  new Scanner(System.in);
     }
 
 }

@@ -4,7 +4,6 @@ import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import org.springframework.stereotype.Component;
 
-@Component("vehicleBean")
 public class Vehicle
 {
     private String brandName;
@@ -22,7 +21,6 @@ public class Vehicle
         this.brandName = brandName;
     }
 
-    @PostConstruct
     private void init()
     {
         System.out.println("Init Method Called");
@@ -33,5 +31,11 @@ public class Vehicle
     private void destroy()
     {
         System.out.println("Destroying Vehicle Bean");
+    }
+
+    @Override
+    public String toString()
+    {
+        return  "Brand Name : " + getBrandName() + "\n";
     }
 }
